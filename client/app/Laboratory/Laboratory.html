@@ -1,0 +1,27 @@
+ <div class="panel-heading" style="background-color: #123f87"> 
+    <h3 class="panel-title" style="color: white; text-align: center;padding: 15px;font-size: 35px">
+    Laboratory
+ <i style="color: white;padding: 15px" class="glyphicon glyphicon-warning-sign"></i> </h3>
+  </div>
+
+<div class="container" ng-init="getLabortary()">
+  <div class="row">
+<div ng-repeat="item in dataArr">
+	<div class="col-xs-12" style="margin-bottom: 25px">
+	<div class="panel panel-default">
+	<div class="panel-heading">Laboratory</div>
+	<ul class="list-group">
+    <li class="list-group-item" ng-repeat="(key, value) in item">
+    	<ng-container ng-if="key === 'View Tender Details:'">
+        	<b>{{key}}</b>  <a class="btn btn-primary" href='{{value.href}}' target="_blank">{{value.text}}</a>
+    	</ng-container>
+    	<ng-container ng-if="key !== 'View Tender Details:'">
+        	<b>{{key}}</b>  {{value}}
+    	</ng-container>
+    </li>
+    </ul>
+    </div>
+    </div>
+</div>
+</div>
+</div>
